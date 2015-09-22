@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Geeker 小周]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-09-22T03:20:44.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[seven-zhou]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[一个小白hacker的独白]]></title>
+    <link href="http://yoursite.com/2015/09/22/%E4%B8%80%E4%B8%AA%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E7%9A%84%E7%8B%AC%E7%99%BD/"/>
+    <id>http://yoursite.com/2015/09/22/一个技术小白的独白/</id>
+    <published>2015-09-22T01:47:33.000Z</published>
+    <updated>2015-09-22T03:20:44.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="开篇">开篇</h2><p>先来一个简单的自我介绍，本人是一个pythoner，linuxer，vimer 目前主要是服务器端开发，也曾有过短暂的创业经历，对所有的技术方向都很有兴趣，可能受美国个人英雄主义腐蚀很严重的原因，希望靠一个之力搞定一切，成为一个Full Stack developer(全栈工程师)。后续的文章，就能感受得到了。</p>
+<h2 id="目标">目标</h2><p>首先是私心，希望通过写这个博客，不断提高自己的文笔和技术，扩大自己的影响力，满足小小的虚荣心。</p>
+<p>其次，通过记录一个一个自己的轨迹，在技术上的学习和思考，尽力去帮到一些人。</p>
+<p>最后，想通过这个平台结识一些朋友，交流和分享一些对技术和生活的感受。</p>
+<h2 id="计划">计划</h2><p>本人是很理科男的思维方式，做事情总想条理清晰，可以归纳总结，所以感觉上很条条框框。这是我想不断调整的地方，可以分享一下人文情怀的东西。目前，还是按照我一贯的方式去做吧。</p>
+<p>我想写一些自己从技术小白成长为一个有一定能力的Geeker的点点滴滴，希望能够帮到一些人。我会梳理出一个路线图和我自己所经历的一些里程碑的事件。</p>
+<p>这里先简单罗列一些：</p>
+<ul>
+<li>打造一个Geeker的开发环境（相对主观了一些）</li>
+<li>积攒自己的技术清单和知识库</li>
+<li>关于产品的思考</li>
+</ul>
+<p>这些主题要写的东西都很多，所以我争取每周都可以写一篇有质量的东西。</p>
+<h2 id="结尾">结尾</h2><p>此刻是一个起步，前路还很漫长，勿忘初心，努力成为一个受尊敬的匠人。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[记录从一个技术小白，做到一个还算不错的程序员的点点滴滴]]>
+    
+    </summary>
+    
+      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+</feed>
