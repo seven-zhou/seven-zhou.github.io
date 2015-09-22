@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-09-22T03:20:44.000Z</updated>
+  <updated>2015-09-22T03:24:57.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[一个小白hacker的独白]]></title>
+    <title><![CDATA[一个小白Geeker的独白]]></title>
     <link href="http://yoursite.com/2015/09/22/%E4%B8%80%E4%B8%AA%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E7%9A%84%E7%8B%AC%E7%99%BD/"/>
     <id>http://yoursite.com/2015/09/22/一个技术小白的独白/</id>
     <published>2015-09-22T01:47:33.000Z</published>
-    <updated>2015-09-22T03:20:44.000Z</updated>
+    <updated>2015-09-22T03:24:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="开篇">开篇</h2><p>先来一个简单的自我介绍，本人是一个pythoner，linuxer，vimer 目前主要是服务器端开发，也曾有过短暂的创业经历，对所有的技术方向都很有兴趣，可能受美国个人英雄主义腐蚀很严重的原因，希望靠一个之力搞定一切，成为一个Full Stack developer(全栈工程师)。后续的文章，就能感受得到了。</p>
 <h2 id="目标">目标</h2><p>首先是私心，希望通过写这个博客，不断提高自己的文笔和技术，扩大自己的影响力，满足小小的虚荣心。</p>
 <p>其次，通过记录一个一个自己的轨迹，在技术上的学习和思考，尽力去帮到一些人。</p>
