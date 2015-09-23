@@ -3,9 +3,9 @@
   <title><![CDATA[Geeker 小周]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
+  <link href="http://seven-zhou.github.io/"/>
   <updated>2015-09-22T06:35:42.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://seven-zhou.github.io/</id>
   
   <author>
     <name><![CDATA[seven-zhou]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[一个小白Geeker的独白]]></title>
-    <link href="http://yoursite.com/2015/09/22/%E4%B8%80%E4%B8%AA%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E7%9A%84%E7%8B%AC%E7%99%BD/"/>
-    <id>http://yoursite.com/2015/09/22/一个技术小白的独白/</id>
+    <link href="http://seven-zhou.github.io/2015/09/22/%E4%B8%80%E4%B8%AA%E6%8A%80%E6%9C%AF%E5%B0%8F%E7%99%BD%E7%9A%84%E7%8B%AC%E7%99%BD/"/>
+    <id>http://seven-zhou.github.io/2015/09/22/一个技术小白的独白/</id>
     <published>2015-09-22T01:47:33.000Z</published>
     <updated>2015-09-22T06:35:42.000Z</updated>
     <content type="html"><![CDATA[<h2 id="开篇">开篇</h2><p>先来一个简单的自我介绍，本人是一个pythoner，linuxer，vimer 目前主要是服务器端开发，也曾有过短暂的创业经历，对所有的技术方向都很有兴趣，可能受美国个人英雄主义腐蚀很严重的原因，希望靠一个之力搞定一切，成为一个Full Stack developer(全栈工程师)。后续的文章，就能感受得到了。</p>
@@ -40,9 +40,9 @@
     
     </summary>
     
-      <category term="随想" scheme="http://yoursite.com/tags/%E9%9A%8F%E6%83%B3/"/>
+      <category term="随想" scheme="http://seven-zhou.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="http://seven-zhou.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
