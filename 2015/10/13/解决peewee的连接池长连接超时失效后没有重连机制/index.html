@@ -6,22 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Geeker 小周">
-    <title>操作系统篇--打造Geek的开发环境 - Geeker 小周</title>
+    <title>解决peewee的连接池长连接超时失效后，没有重连机制 - Geeker 小周</title>
     <meta name="author" content="seven-zhou">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="操作系统是一个非常基础的平台，确定了以后开发方式，工具的选择，所以非常关键">
+    <meta name="description" content="遇到的问题最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：
+OperationalError: (2006, &amp;#39;MySQL server has gone away&amp;#39;)
+联系DBA，询问一下是否是数据库的问题，答复是数据库没有问题(当时还不知道是因为长连接失效导致，真是丢人)，果断重启服">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="操作系统篇--打造Geek的开发环境">
-<meta property="og:url" content="http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/index.html">
+<meta property="og:title" content="解决peewee的连接池长连接超时失效后，没有重连机制">
+<meta property="og:url" content="http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/index.html">
 <meta property="og:site_name" content="Geeker 小周">
-<meta property="og:description" content="操作系统是一个非常基础的平台，确定了以后开发方式，工具的选择，所以非常关键">
-<meta property="og:updated_time" content="2015-09-28T03:35:16.000Z">
+<meta property="og:description" content="遇到的问题最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：
+OperationalError: (2006, &amp;#39;MySQL server has gone away&amp;#39;)
+联系DBA，询问一下是否是数据库的问题，答复是数据库没有问题(当时还不知道是因为长连接失效导致，真是丢人)，果断重启服">
+<meta property="og:updated_time" content="2015-10-13T10:07:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="操作系统篇--打造Geek的开发环境">
-<meta name="twitter:description" content="操作系统是一个非常基础的平台，确定了以后开发方式，工具的选择，所以非常关键">
+<meta name="twitter:title" content="解决peewee的连接池长连接超时失效后，没有重连机制">
+<meta name="twitter:description" content="遇到的问题最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：
+OperationalError: (2006, &amp;#39;MySQL server has gone away&amp;#39;)
+联系DBA，询问一下是否是数据库的问题，答复是数据库没有问题(当时还不知道是因为长连接失效导致，真是丢人)，果断重启服">
     
     
     
@@ -171,13 +177,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            操作系统篇--打造Geek的开发环境
+            解决peewee的连接池长连接超时失效后，没有重连机制
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Sep 25 2015 09:46:56 GMT+0800">
+    <time itemprop="datePublished" content="Tue Oct 13 2015 17:39:09 GMT+0800">
 	
-		    9月 25, 2015
+		    10月 13, 2015
     	
     </time>
     
@@ -192,18 +198,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="经历">经历</h2><p>开篇的部分，先随便聊一聊，自己曾使用过的电脑操作系统。</p>
-<p>很多90后，00后可能都不知道什么是DOS系统，这也是我接触第一电脑操作系统，更准确的说应该叫做MS-DOS，主要是学校的机房和电脑房。</p>
-<p>之后就是windows系统的电脑操作系统了，WIN98是非常经典的操作系统，当时光是看屏保就让人感到非常惊艳，那时还不知道linux系统为何物。</p>
-<p>上了大学之后，才第一次接触到Linux系统，记得当时使用应该是Debian系统，第一感觉就是特别难用，还是windows系统好，使用很方便，之后才知道Linux系统的强大。</p>
-<p>简单回顾了一下，自己接触过的各个电脑操作系统，当时觉得电脑实在是太酷啦，可能就是在那时决定了自己将来要从和电脑相关的工作了。</p>
-<h2 id="正题">正题</h2><p>刚开始工作的时候，是windows平台上使用java语言开发eclipse的插件，主要使用的IDE理所当然就是eclipse，当时感觉eclipse太复杂啦，需要配置各种各样的插件，启动时间超长，虽然吐槽很多，但不得不说eclipse确实是开发Java的神器，同时也影响了很多后来的IDE。貌似有点跑题，今天主要说的是，操作系统的事，以后我会重点说一下关于IDE的。</p>
-<p>对于绝大多数刚入行的小排程序员来说，windows平台是最熟悉，也是最容易上手的开发平台，而且目前PC使用量最大的操作系统，所以有很多配套的开发工具可以使用，例如：wireshark，fiddler，xshell等等，其实已经可以满足开发的需求啦。但如果你想进一步提高自己的效率（个人的看法），更Geek一些，那么你就不得不告别windows平台，拥抱Linux平台（或者Mac，本人目前还没有使用过去）。</p>
-<p>随着互联网的不断发展，B/S结构的服务越来越流行，现在移动互联网更是异常火爆，以APP+Server的方式为广大用户提供服务，变成了一种常态。所以会很明显发现，在服务端需要开发的工作量越来越多，越来越多，而运行在服务端的应用基本上绝大多数都是基于Linux内核的操作系统，例如：centOS，RedHat，Ubuntu等。</p>
-<p>使用Linux系统的好处还有很多，很多主流的服务端的软件都是运行在Linux系统上，例如：Nginx，MySQL，MongoDB等，非常非常的多，这样就可以很直观的了解这些软件的使用方式，特点，工作原理等，也可以在自己的本地环境进行各种测试。</p>
-<p>Linux系统拥有大量的系统命令，让你可以更加了解计算机的工作原理，对CPU，内存，磁盘和网络都可以进行查看，修改和管理，让你有种真正掌控自己电脑的感觉。</p>
-<p>说了这么一大堆，主要就是想表达选择Linux作为自己的开发系统，是一种趋势，同时也确确实实能够带来很多便利和提高效率。</p>
-<h2 id="结尾">结尾</h2><p>很多事情的第一步很重要，只要你勇敢的走出第一步，你会发现其实并没有想象中那么难。所以，那些没有使用过Linux系统的人，不妨下载一个Ubuntu的镜像，自己动手安装一个属于自己的Linux系统，或许你将再也离不开它啦。后续，我会介绍一下如何安装一个Ubuntu的系统。</p>
+            <h2 id="遇到的问题">遇到的问题</h2><p>最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：</p>
+<p><code>OperationalError: (2006, &#39;MySQL server has gone away&#39;)</code></p>
+<p>联系DBA，询问一下是否是数据库的问题，答复是数据库没有问题(当时还不知道是因为长连接失效导致，真是丢人)，果断重启服务，故障解除，这是一个解决很多问题的好方法。</p>
+<h2 id="分析问题">分析问题</h2><p>google了一下，原因是peewee使用MySQLdb库没有提供检查连接的情况和自动重连的机制。</p>
+<h2 id="解决问题">解决问题</h2><p>发现很多人遇到了这样的问题，并在github向peewee的作者提问，随之发现最新版本的peewee提供了<code>RetryOperationalError</code>，可以解决正常情况的失效自动重连。但是需要注意目前通过pip还不能安装到最新的这个版本，需要手动github下载安装。</p>
+<p>不过，它还是不能解决<code>PooledMySQLDatabase</code>连接池失效的情况，根据<code>RetryOperationalError</code>的思路，决定自己Hack一下，就有如下的代码：</p>
+<script src="https://gist.github.com/zhouxb/ced1f9ee3baa69c5c31d.js"></script>
+
+<p>本人在本地测试，可以实现失效后重连机制，同时可以使用现有版本的peewee</p>
 
             
                 
@@ -216,7 +219,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/linux/">linux</a> <a class="tag tag--primary tag--small t-link" href="/tags/开发环境/">开发环境</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/数据库，peewee/">数据库，peewee</a>
 
             </div>
         
@@ -225,7 +228,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/"  data-tooltip="解决peewee的连接池长连接超时失效后，没有重连机制">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -233,7 +236,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/09/22/一个技术小白的独白/" data-tooltip="一个小白Geeker的独白">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/09/25/操作系统篇-打造Geek的开发环境/" data-tooltip="操作系统篇--打造Geek的开发环境">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -248,17 +251,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -304,7 +307,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/"  data-tooltip="解决peewee的连接池长连接超时失效后，没有重连机制">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -312,7 +315,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/09/22/一个技术小白的独白/" data-tooltip="一个小白Geeker的独白">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/09/25/操作系统篇-打造Geek的开发环境/" data-tooltip="操作系统篇--打造Geek的开发环境">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -327,17 +330,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -363,17 +366,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/09/25/操作系统篇-打造Geek的开发环境/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

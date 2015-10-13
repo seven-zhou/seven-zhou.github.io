@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://seven-zhou.github.io/"/>
-  <updated>2015-09-28T03:35:16.000Z</updated>
+  <updated>2015-10-13T10:07:46.000Z</updated>
   <id>http://seven-zhou.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[解决peewee的连接池长连接超时失效后，没有重连机制]]></title>
+    <link href="http://seven-zhou.github.io/2015/10/13/%E8%A7%A3%E5%86%B3peewee%E7%9A%84%E8%BF%9E%E6%8E%A5%E6%B1%A0%E9%95%BF%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E5%A4%B1%E6%95%88%E5%90%8E%E6%B2%A1%E6%9C%89%E9%87%8D%E8%BF%9E%E6%9C%BA%E5%88%B6/"/>
+    <id>http://seven-zhou.github.io/2015/10/13/解决peewee的连接池长连接超时失效后没有重连机制/</id>
+    <published>2015-10-13T09:39:09.000Z</published>
+    <updated>2015-10-13T10:07:46.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="遇到的问题">遇到的问题</h2><p>最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：</p>
+<p><code>OperationalError: (2006, &#39;MySQL server has gone away&#39;)</code></p>
+<p>联系DBA，询问一下是否是数据库的问题，答复是数据库没有问题(当时还不知道是因为长连接失效导致，真是丢人)，果断重启服务，故障解除，这是一个解决很多问题的好方法。</p>
+<h2 id="分析问题">分析问题</h2><p>google了一下，原因是peewee使用MySQLdb库没有提供检查连接的情况和自动重连的机制。</p>
+<h2 id="解决问题">解决问题</h2><p>发现很多人遇到了这样的问题，并在github向peewee的作者提问，随之发现最新版本的peewee提供了<code>RetryOperationalError</code>，可以解决正常情况的失效自动重连。但是需要注意目前通过pip还不能安装到最新的这个版本，需要手动github下载安装。</p>
+<p>不过，它还是不能解决<code>PooledMySQLDatabase</code>连接池失效的情况，根据<code>RetryOperationalError</code>的思路，决定自己Hack一下，就有如下的代码：</p>
+<script src="https://gist.github.com/zhouxb/ced1f9ee3baa69c5c31d.js"></script>
+
+<p>本人在本地测试，可以实现失效后重连机制，同时可以使用现有版本的peewee</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="遇到的问题">遇到的问题</h2><p>最近，负责一个后台运营系统的开发和维护，由于是新上线的业务，又是内部系统，所以使用的频率比较低。而今天突然就告警了，还是很意外的，告警内容如下：</p>
+<p><code>OperationalError: (2006, &]]>
+    </summary>
+    
+      <category term="数据库，peewee" scheme="http://seven-zhou.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8Cpeewee/"/>
+    
+      <category term="技术" scheme="http://seven-zhou.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[操作系统篇--打造Geek的开发环境]]></title>
