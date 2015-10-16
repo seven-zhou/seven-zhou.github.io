@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://seven-zhou.github.io/"/>
-  <updated>2015-10-16T03:08:28.000Z</updated>
+  <updated>2015-10-16T03:16:01.000Z</updated>
   <id>http://seven-zhou.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://seven-zhou.github.io/2015/10/16/%E4%BF%AE%E5%A4%8Dvirtualbox%E4%B8%8D%E8%83%BD%E4%B8%8A%E7%BD%91%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://seven-zhou.github.io/2015/10/16/修复virtualbox不能上网的问题/</id>
     <published>2015-10-16T01:59:00.000Z</published>
-    <updated>2015-10-16T03:08:28.000Z</updated>
+    <updated>2015-10-16T03:16:01.000Z</updated>
     <content type="html"><![CDATA[<p>virtualbox是一个免费的虚拟机软件，非常的好用，基本上满足了我在Linux操作系统上，需要使用Windows软件的需求，同时可以安装和使用，各种你想要的操作系统，例如安卓等。</p>
 <h2 id="遇到问题">遇到问题</h2><p>因为工作的原因，需要一些在Windows上即时通讯工具和办公软件，所以不得不在virtualbox上安装一个XP的虚拟机，其稳定性直接影响到工作的效率，但有时候非正常的关闭可能会导致一些莫名奇怪的问题，今天就遇到了一个这样的问题，virtualbox不能上网了。</p>
 <p>可以正常进入虚拟机，设置为NAT的方式上网，在网络连接也可以看到本地连接，但在cmd里执行ipconfig，没有Ethernet adapter等信息，简单来说就是没有分配IP地址。</p>
@@ -38,7 +38,7 @@
 <p>PCNet-FAST III 是预设的网卡配置，它支持大部分的操作系统，并且它具有GNU GRUB启动管理<br>Intel PRO/1000 MT Desktop 支持Windows Vista及之后的版本，免安装驱动<br>Intel PRO/1000 T Server 支持Windows XP，免安装驱动<br>Intel PRO/1000 MT Server 支持OVF(open virtualization format)<br>Paravirtualized network adapter半虚拟化，这张网卡是专为虚拟机设计的，必须另外安装Guest Addtion才能启动</p>
 <p>兼容性：<br>PCNet系列兼容性好，也比较古老。<br>Intel PRO/1000系列是比较新的NIC</p>
 <p>性能：<br>Intel PRO/1000系列性能要比PCNet系列要好<br>Paravirtualized network adapter要比前两者都好</p>
-<p>综上所述，可以尝试Paravirtualized network adapter，如果出现兼容性能问题，可根据上面的信息，自行进行调整。</p>
+<p>综上所述，可以尝试Paravirtualized network adapter，如果出现兼容性方面的问题，可根据上面的信息，自行进行调整。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>virtualbox是一个免费的虚拟机软件，非常的好用，基本上满足了我在Linux操作系统上，需要使用Windows软件的需求，同时可以安装和使用，各种你想要的操作系统，例如安卓等。</p>
