@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://seven-zhou.github.io/"/>
-  <updated>2015-10-28T04:15:52.000Z</updated>
+  <updated>2015-11-26T09:15:54.000Z</updated>
   <id>http://seven-zhou.github.io/</id>
   
   <author>
@@ -15,11 +15,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[惊喜发现Python的virtualenvwrapper的隐藏功能]]></title>
+    <link href="http://seven-zhou.github.io/2015/11/26/%E6%83%8A%E5%96%9C%E5%8F%91%E7%8E%B0Python%E7%9A%84virtualenvwrapper%E7%9A%84%E9%9A%90%E8%97%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/</id>
+    <published>2015-11-26T09:00:52.000Z</published>
+    <updated>2015-11-26T09:15:54.000Z</updated>
+    <content type="html"><![CDATA[<p>今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。</p>
+<p>本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动切换到了对应的Python虚拟环境，同时我没有在此目录下添加.venv的文件，瞬间迷茫了，不知道为什么。</p>
+<p>经过对目录里面的文件和文件夹各种删除，终于让我发现，这个现象与.git文件夹有关，就去查看virtualenvwrapper官网手册，以确认这个问题，在被我忽视的角落里发现了这段话：Harry Marr wrote a similar function that works with <a href="http://hmarr.com/2010/jan/19/making-virtualenv-play-nice-with-git/" target="_blank" rel="external">git repositories</a>，算是有了一个明确的结论。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。</p>
+<p>本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动]]>
+    </summary>
+    
+      <category term="python" scheme="http://seven-zhou.github.io/tags/python/"/>
+    
+      <category term="技术" scheme="http://seven-zhou.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[搭建私人的Docker仓库]]></title>
     <link href="http://seven-zhou.github.io/2015/10/28/%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E7%9A%84Docker-Images/"/>
     <id>http://seven-zhou.github.io/2015/10/28/搭建私人的Docker-Images/</id>
     <published>2015-10-28T02:47:32.000Z</published>
-    <updated>2015-10-28T04:15:52.000Z</updated>
+    <updated>2015-10-28T04:15:57.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>目前Docker的虚拟化技术非常的火爆，越来越多的公司开始使用Docker，所以，我也开始在公司推行Docker的使用，先从开发环境入手，使用Docker来构造开发环境，这样可以方便各种研发人员快速使用，节省时间成本。稍后准备在生产环境使用Docker，不过这个过程要比开发环境要复杂的多，需要从Docker集群的部署，运维和管理各个方面做好准备，有里面需要探讨的东西会有很多，我会结合自身使用的情况，不断记录，和大家一同探索Docker。</p>
 <h2 id="需求">需求</h2><p>由于国内网络的问题，同时考虑公司的一些安全的问题，所以Docker Hub是无法满足我们对Docker仓库管理的需求，所以就需要自己搭建一个私人的Docker仓库。这样无论速度，还是安全方面都有保障，同时也更好控制。</p>
 <h2 id="调研">调研</h2><p>发现开源的私人Docker仓库的项目，主要是Docker公司的自己<a href="https://github.com/docker/docker-registry" target="_blank" rel="external">docker-registry</a>和<a href="https://github.com/docker/distribution" target="_blank" rel="external">distribution</a>，docker-registry是使用python开发的，而distribution是用GO开发，官方也明确表示建议使用distribution，而docker-registry后续会被废弃。既然如此，果断跟随Docker公司的脚步，决定使用distribution。</p>
