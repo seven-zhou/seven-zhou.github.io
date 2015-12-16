@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://seven-zhou.github.io/"/>
-  <updated>2015-12-16T09:57:30.000Z</updated>
+  <updated>2015-12-16T10:06:02.000Z</updated>
   <id>http://seven-zhou.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://seven-zhou.github.io/2015/12/16/%E9%80%9A%E8%BF%87Google-Custom-Search%E6%89%93%E9%80%A0%E7%A7%81%E6%9C%89%E7%9A%84%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
     <id>http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/</id>
     <published>2015-12-16T08:33:34.000Z</published>
-    <updated>2015-12-16T09:57:30.000Z</updated>
+    <updated>2015-12-16T10:06:02.000Z</updated>
     <content type="html"><![CDATA[<p>最近对纪录片产生了极大的兴趣，感觉特别真实，特别有趣，像之前介绍过的《寿司之神》。但通过Google直接搜索稀缺资源的下载地址，还是很难得到满意的答案，我就搜罗一些比较好的资源站点，方便自己找到想要的资源，可是一个一个去搜索还是不够极客，所以就想打造一个自定义的搜索引擎。</p>
 <p>Google Custom Search就是可以帮助我完成这件事情的神器，分享一下使用方法，可以帮助到有同样需求的朋友快速使用。</p>
 <ol>
@@ -28,7 +28,7 @@
 <li>如果幸运可以访问的话，将看到这个样的页面，点击Add按钮<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse1.png" alt="cse1"></li>
 <li>配置Custom Search，需要输入搜索地址（Sites to search）和搜索引擎名称（Name of the search engine），自行定义。<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse2.png" alt="cse2"></li>
 <li>进行更详细的配置，点击Setup按钮，可以手动一个一个添加资源站点的搜索URL<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse3.png" alt="cse2"><br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse4.png" alt="cse2"></li>
-<li><p>一般手动添加就可以满足要求，但如果你想提高效率，那么点击Advanced按钮，再点击CSE annotations下Download(XML)，下载CSE annotations XML，将下载XML修改成如下，注意替换Label标签的name为CSE annotations提供的label name，点击Add上传修改好的XML文件<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse5.png" alt="cse2"></p>
+<li><p>一般手动添加就可以满足要求，但如果你想提高效率，那么点击Advanced按钮，再点击CSE annotations下Download(XML)，下载CSE annotations XML<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse5.png" alt="cse2"><br>将下载XML修改成如下注意替换Label标签的name为CSE annotations提供的label name，点击Add上传修改好的XML文件<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse6.png" alt="cse2"></p>
 <p>大功告成，那么构建什么样的自定义搜索引擎，就可以发挥想象力了…<br>分享一个视频搜索的annotations xml<a href="https://github.com/JayXon/DownloadSearch/blob/master/annotations.xml" target="_blank" rel="external">下载地址</a></p>
 </li>
 </ol>
