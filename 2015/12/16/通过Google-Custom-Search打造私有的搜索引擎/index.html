@@ -6,28 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Geeker 小周">
-    <title>惊喜发现Python的virtualenvwrapper的隐藏功能 - Geeker 小周</title>
+    <title>通过Google Custom Search打造私有的搜索引擎 - Geeker 小周</title>
     <meta name="author" content="seven-zhou">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。
-本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动切换到了对应的Python虚拟环境，同时我没有在此目录下添加.venv的文件，瞬间迷茫了，不知道为什么。
-经过对目录里面的文件和文件夹各种删">
+    <meta name="description" content="最近对纪录片产生了极大的兴趣，感觉特别真实，特别有趣，像之前介绍过的《寿司之神》。但通过Google直接搜索稀缺资源的下载地址，还是很难得到满意的答案，我就搜罗一些比较好的资源站点，方便自己找到想要的资源，可是一个一个去搜索还是不够极客，所以就想打造一个自定义的搜索引擎。
+Google Custom Search就是可以帮助我完成这件事情的神器，分享一下使用方法，可以帮助到有同样需求的朋友快速使用">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="惊喜发现Python的virtualenvwrapper的隐藏功能">
-<meta property="og:url" content="http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/index.html">
+<meta property="og:title" content="通过Google Custom Search打造私有的搜索引擎">
+<meta property="og:url" content="http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/index.html">
 <meta property="og:site_name" content="Geeker 小周">
-<meta property="og:description" content="今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。
-本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动切换到了对应的Python虚拟环境，同时我没有在此目录下添加.venv的文件，瞬间迷茫了，不知道为什么。
-经过对目录里面的文件和文件夹各种删">
-<meta property="og:updated_time" content="2015-11-26T09:15:54.000Z">
+<meta property="og:description" content="最近对纪录片产生了极大的兴趣，感觉特别真实，特别有趣，像之前介绍过的《寿司之神》。但通过Google直接搜索稀缺资源的下载地址，还是很难得到满意的答案，我就搜罗一些比较好的资源站点，方便自己找到想要的资源，可是一个一个去搜索还是不够极客，所以就想打造一个自定义的搜索引擎。
+Google Custom Search就是可以帮助我完成这件事情的神器，分享一下使用方法，可以帮助到有同样需求的朋友快速使用">
+<meta property="og:image" content="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse1.png">
+<meta property="og:image" content="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse2.png">
+<meta property="og:image" content="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse3.png">
+<meta property="og:image" content="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse4.png">
+<meta property="og:image" content="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse5.png">
+<meta property="og:updated_time" content="2015-12-16T09:57:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="惊喜发现Python的virtualenvwrapper的隐藏功能">
-<meta name="twitter:description" content="今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。
-本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动切换到了对应的Python虚拟环境，同时我没有在此目录下添加.venv的文件，瞬间迷茫了，不知道为什么。
-经过对目录里面的文件和文件夹各种删">
+<meta name="twitter:title" content="通过Google Custom Search打造私有的搜索引擎">
+<meta name="twitter:description" content="最近对纪录片产生了极大的兴趣，感觉特别真实，特别有趣，像之前介绍过的《寿司之神》。但通过Google直接搜索稀缺资源的下载地址，还是很难得到满意的答案，我就搜罗一些比较好的资源站点，方便自己找到想要的资源，可是一个一个去搜索还是不够极客，所以就想打造一个自定义的搜索引擎。
+Google Custom Search就是可以帮助我完成这件事情的神器，分享一下使用方法，可以帮助到有同样需求的朋友快速使用">
     
     
     
@@ -188,13 +190,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            惊喜发现Python的virtualenvwrapper的隐藏功能
+            通过Google Custom Search打造私有的搜索引擎
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Nov 26 2015 17:00:52 GMT+0800">
+    <time itemprop="datePublished" content="Wed Dec 16 2015 16:33:34 GMT+0800">
 	
-		    11月 26, 2015
+		    12月 16, 2015
     	
     </time>
     
@@ -209,9 +211,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>今天在调试Python程序的时候，无意间发现一个惊喜的情况，就是进入一个项目目录后，会自动切换到与目录名称一致的Python虚拟环境，真是又惊又喜。</p>
-<p>本来想测试BUCK构建的Python二进制文件解压后，无法自动找到Python的路径，没想到每次进入目录都自动切换到了对应的Python虚拟环境，同时我没有在此目录下添加.venv的文件，瞬间迷茫了，不知道为什么。</p>
-<p>经过对目录里面的文件和文件夹各种删除，终于让我发现，这个现象与.git文件夹有关，就去查看virtualenvwrapper官网手册，以确认这个问题，在被我忽视的角落里发现了这段话：Harry Marr wrote a similar function that works with <a href="http://hmarr.com/2010/jan/19/making-virtualenv-play-nice-with-git/" target="_blank" rel="external">git repositories</a>，算是有了一个明确的结论。</p>
+            <p>最近对纪录片产生了极大的兴趣，感觉特别真实，特别有趣，像之前介绍过的《寿司之神》。但通过Google直接搜索稀缺资源的下载地址，还是很难得到满意的答案，我就搜罗一些比较好的资源站点，方便自己找到想要的资源，可是一个一个去搜索还是不够极客，所以就想打造一个自定义的搜索引擎。</p>
+<p>Google Custom Search就是可以帮助我完成这件事情的神器，分享一下使用方法，可以帮助到有同样需求的朋友快速使用。</p>
+<ol>
+<li>需要一个Google的帐号，如果没有的话请自行申请。</li>
+<li>访问<a href="https://cse.google.com" target="_blank" rel="external">https://cse.google.com/</a>，其实你懂得，该网站是访问不了的。</li>
+<li>如果幸运可以访问的话，将看到这个样的页面，点击Add按钮<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse1.png" alt="cse1"></li>
+<li>配置Custom Search，需要输入搜索地址（Sites to search）和搜索引擎名称（Name of the search engine），自行定义。<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse2.png" alt="cse2"></li>
+<li>进行更详细的配置，点击Setup按钮，可以手动一个一个添加资源站点的搜索URL<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse3.png" alt="cse2"><br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse4.png" alt="cse2"></li>
+<li><p>一般手动添加就可以满足要求，但如果你想提高效率，那么点击Advanced按钮，再点击CSE annotations下Download(XML)，下载CSE annotations XML，将下载XML修改成如下，注意替换Label标签的name为CSE annotations提供的label name，点击Add上传修改好的XML文件<br><img src="http://7nj1fr.com1.z0.glb.clouddn.com/profilecse5.png" alt="cse2"></p>
+<p>大功告成，那么构建什么样的自定义搜索引擎，就可以发挥想象力了…<br>分享一个视频搜索的annotations xml<a href="https://github.com/JayXon/DownloadSearch/blob/master/annotations.xml" target="_blank" rel="external">下载地址</a></p>
+</li>
+</ol>
 
             
                 
@@ -224,7 +235,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/python/">python</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Google/">Google</a>
 
             </div>
         
@@ -233,7 +244,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/"  data-tooltip="通过Google Custom Search打造私有的搜索引擎">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -241,7 +252,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/28/搭建私人的Docker-Images/" data-tooltip="搭建私人的Docker仓库">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/" data-tooltip="惊喜发现Python的virtualenvwrapper的隐藏功能">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -256,17 +267,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -312,7 +323,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/"  data-tooltip="通过Google Custom Search打造私有的搜索引擎">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -320,7 +331,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/10/28/搭建私人的Docker-Images/" data-tooltip="搭建私人的Docker仓库">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/" data-tooltip="惊喜发现Python的virtualenvwrapper的隐藏功能">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -335,17 +346,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -371,17 +382,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/11/26/惊喜发现Python的virtualenvwrapper的隐藏功能/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://seven-zhou.github.io/2015/12/16/通过Google-Custom-Search打造私有的搜索引擎/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
